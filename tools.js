@@ -22,7 +22,8 @@ const links = [
     { title: "Doppler Shift of Celestial Spectra", url: "https://rlawry.github.io/spectra-redshift" },
     { title: "Parallax", url: "https://rlawry.github.io/parallax"},
     { title: "HR-Diagram Plot", url: "https://rlawry.github.io/hr-diagram"},
-    { title: "Star Spectra", url: "https://rlawry.github.io/star-spectra"}
+    { title: "Star Spectra", url: "https://rlawry.github.io/star-spectra"},
+    { title: "Kepler Lab", url: "https://rlawry.github.io/triangulation-simulation"}
     // Add more links as needed
   ];
   
