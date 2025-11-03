@@ -1,29 +1,30 @@
 // Sample links array
 const links = [
     { title: "Ellipse Eccentricity", url: "https://rlawry.github.io/ellipsegame" },
+    { title: "Kepler Lab", url: "https://rlawry.github.io/triangulation-simulation"},
+    { title: "Retrograde", url: "https://rlawry.github.io/retrograde" },
+    { title: "Parallax", url: "https://rlawry.github.io/parallax"},
+    { title: "Star Quiz", url: "https://rlawry.github.io/star-quiz" },
+    { title: "HR-Diagram Plot", url: "https://rlawry.github.io/hr-diagram"},
+    { title: "Colors of Wavelengths", url: "https://rlawry.github.io/wave-shift" },
+    { title: "Star Spectra", url: "https://rlawry.github.io/star-spectra"},
+    { title: "Redshift of Celestial Spectra", url: "https://rlawry.github.io/spectra-redshift" },
+    { title: "Spectra of Galaxies Viewer (Redshift and Composition)", url: "https://rlawry.github.io/galaxy-viewer" },
+    { title: "Planet Size Comparison", url: "https://rlawry.github.io/planet-compare" },
+    { title: "Earth Tilt", url: "https://rlawry.github.io/earth-tilt" }
+    { title: "Sun's Path", url: "https://rlawry.github.io/sunspath" },
+    { title: "Sunrise and Sunset", url: "https://rlawry.github.io/sunriseGame" },
     { title: "Distance to Epicenter", url: "https://rlawry.github.io/epicentersgame" },
+    { title: "Moon Phases", url: "https://rlawry.github.io/moonphasegame" },
     { title: "Eclipse Game", url: "https://rlawry.github.io/eclipse-game" },
     { title: "Weather Instruments", url: "https://rlawry.github.io/weatherinstruments" },
-    { title: "Earth Tilt", url: "https://rlawry.github.io/earth-tilt" },
     { title: "Isolines", url: "https://rlawry.github.io/isolines" },
     { title: "Rock Game", url: "https://rlawry.github.io/rockgame" },
-    { title: "Sunrise and Sunset", url: "https://rlawry.github.io/sunriseGame" },
-    { title: "Retrograde", url: "https://rlawry.github.io/retrograde" },
-    { title: "Sun's Path", url: "https://rlawry.github.io/sunspath" },
-    { title: "Colors of Wavelengths", url: "https://rlawry.github.io/wave-shift" },
-    { title: "Star Quiz", url: "https://rlawry.github.io/star-quiz" },
     { title: "Latitude and Longitude Game", url: "https://rlawry.github.io/latlongame" },
     { title: "Blue Sky", url: "https://rlawry.github.io/blue-sky" },
-    { title: "Moon Phases", url: "https://rlawry.github.io/moonphasegame" },
     { title: "Angle of Insolation", url: "https://rlawry.github.io/angle-of-insolation-game" },
     { title: "Streamflow Direction - Contour Maps", url: "https://rlawry.github.io/streamflow" },
-    { title: "Radioactive Decay", url: "https://rlawry.github.io/3D-radioactive-decay" },
-    { title: "Planet Size Comparison", url: "https://rlawry.github.io/planet-compare" },
-    { title: "Doppler Shift of Celestial Spectra", url: "https://rlawry.github.io/spectra-redshift" },
-    { title: "Parallax", url: "https://rlawry.github.io/parallax"},
-    { title: "HR-Diagram Plot", url: "https://rlawry.github.io/hr-diagram"},
-    { title: "Star Spectra", url: "https://rlawry.github.io/star-spectra"},
-    { title: "Kepler Lab", url: "https://rlawry.github.io/triangulation-simulation"}
+    { title: "Radioactive Decay", url: "https://rlawry.github.io/3D-radioactive-decay" }
     // Add more links as needed
   ];
   
