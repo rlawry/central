@@ -13,7 +13,7 @@ const links = [
     { title: "Redshift of Celestial Spectra", url: "https://rlawry.github.io/spectra-redshift" },
     { title: "Spectra of Galaxies Viewer (Redshift and Composition)", url: "https://rlawry.github.io/galaxy-viewer" },
     { title: "Planet Size Comparison", url: "https://rlawry.github.io/planet-compare" },
-    { title: "Earth Tilt", url: "https://rlawry.github.io/earth-tilt" }
+    { title: "Earth Tilt", url: "https://rlawry.github.io/earth-tilt" },
     { title: "Sun's Path", url: "https://rlawry.github.io/sunspath" },
     { title: "Sunrise and Sunset", url: "https://rlawry.github.io/sunriseGame" },
     { title: "Distance to Epicenter", url: "https://rlawry.github.io/epicentersgame" },
