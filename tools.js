@@ -26,7 +26,8 @@ const links = [
     { title: "Blue Sky", url: "https://rlawry.github.io/blue-sky" },
     { title: "Angle of Insolation", url: "https://rlawry.github.io/angle-of-insolation-game" },
     { title: "Streamflow Direction - Contour Maps", url: "https://rlawry.github.io/streamflow" },
-    { title: "Radioactive Decay", url: "https://rlawry.github.io/3D-radioactive-decay" }
+    { title: "3D Radioactive Decay", url: "https://rlawry.github.io/3D-radioactive-decay" },
+    { title: "2D Radioactive Decay", url: "https://rlawry.github.io/2D-radioactive-decay" }
     // Add more links as needed
   ];
   
