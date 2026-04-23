@@ -3,17 +3,407 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Apps Collection</title>
-  <!-- Link to the CSS stylesheet -->
-  <link rel="stylesheet" href="main.css">
+  <title>Earth &amp; Space Science Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #101418;
+      --surface: #181d24;
+      --border: rgba(255,255,255,0.07);
+      --text: #dde3ec;
+      --muted: #5a6478;
+
+      /* 1 Space Systems — deep indigo */
+      --c1: #5c7cfa;
+      --c1-dim: rgba(92,124,250,0.10);
+      --c1-glow: rgba(92,124,250,0.22);
+
+      /* 2 History of Earth — warm amber */
+      --c2: #f0a045;
+      --c2-dim: rgba(240,160,69,0.10);
+      --c2-glow: rgba(240,160,69,0.22);
+
+      /* 3 Earth's Systems — teal */
+      --c3: #20c79e;
+      --c3-dim: rgba(32,199,158,0.10);
+      --c3-glow: rgba(32,199,158,0.22);
+
+      /* 4 Weather & Climate — sky blue */
+      --c4: #38bdf8;
+      --c4-dim: rgba(56,189,248,0.10);
+      --c4-glow: rgba(56,189,248,0.22);
+
+      /* 5 Human Sustainability — rose */
+      --c5: #f87171;
+      --c5-dim: rgba(248,113,113,0.10);
+      --c5-glow: rgba(248,113,113,0.22);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 58px 24px 46px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(92,124,250,0.07) 0%, transparent 100%);
+    }
+    .hero-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c1);
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: 0.03em;
+      color: #fff;
+      line-height: 1.05;
+    }
+    .hero p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 26px 24px 0;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      padding: 6px 15px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .nav a:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
+    .nav a.n1 { color: var(--c1); border-color: var(--c1); background: var(--c1-dim); }
+    .nav a.n2 { color: var(--c2); border-color: var(--c2); background: var(--c2-dim); }
+    .nav a.n3 { color: var(--c3); border-color: var(--c3); background: var(--c3-dim); }
+    .nav a.n4 { color: var(--c4); border-color: var(--c4); background: var(--c4-dim); }
+    .nav a.n5 { color: var(--c5); border-color: var(--c5); background: var(--c5-dim); }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 1320px;
+      margin: 50px auto 0;
+      padding: 0 24px;
+    }
+
+    /* ── BANNER ── */
+    .section-banner {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: 22px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .banner-tab {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14px 22px;
+      flex-shrink: 0;
+      min-width: 200px;
+    }
+    .banner-tab .tab-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.07em;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .banner-tab .tab-pes {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.72rem;
+      margin-top: 4px;
+      opacity: 0.75;
+      letter-spacing: 0.04em;
+      color: #fff;
+    }
+    .s1 .banner-tab { background: var(--c1); }
+    .s2 .banner-tab { background: var(--c2); }
+    .s2 .banner-tab .tab-label,
+    .s2 .banner-tab .tab-pes { color: #1a0d00; }
+    .s3 .banner-tab { background: var(--c3); }
+    .s3 .banner-tab .tab-label,
+    .s3 .banner-tab .tab-pes { color: #041a14; }
+    .s4 .banner-tab { background: var(--c4); }
+    .s4 .banner-tab .tab-label,
+    .s4 .banner-tab .tab-pes { color: #041420; }
+    .s5 .banner-tab { background: var(--c5); }
+    .s5 .banner-tab .tab-label,
+    .s5 .banner-tab .tab-pes { color: #1a0404; }
+
+    .banner-body {
+      flex: 1;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      gap: 16px;
+    }
+    .banner-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+    .banner-count {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.73rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── GRID ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+      gap: 11px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 13px 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 0.35s ease forwards;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .card:hover { transform: translateY(-3px); }
+
+    .s1 .card:hover { border-color: var(--c1); box-shadow: 0 8px 28px var(--c1-glow); background: var(--c1-dim); }
+    .s2 .card:hover { border-color: var(--c2); box-shadow: 0 8px 28px var(--c2-glow); background: var(--c2-dim); }
+    .s3 .card:hover { border-color: var(--c3); box-shadow: 0 8px 28px var(--c3-glow); background: var(--c3-dim); }
+    .s4 .card:hover { border-color: var(--c4); box-shadow: 0 8px 28px var(--c4-glow); background: var(--c4-dim); }
+    .s5 .card:hover { border-color: var(--c5); box-shadow: 0 8px 28px var(--c5-glow); background: var(--c5-dim); }
+
+    .card-std {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .s1 .card-std { color: var(--c1); background: var(--c1-dim); border: 1px solid rgba(92,124,250,0.2); }
+    .s2 .card-std { color: var(--c2); background: var(--c2-dim); border: 1px solid rgba(240,160,69,0.2); }
+    .s3 .card-std { color: var(--c3); background: var(--c3-dim); border: 1px solid rgba(32,199,158,0.2); }
+    .s4 .card-std { color: var(--c4); background: var(--c4-dim); border: 1px solid rgba(56,189,248,0.2); }
+    .s5 .card-std { color: var(--c5); background: var(--c5-dim); border: 1px solid rgba(248,113,113,0.2); }
+
+    .card a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.4;
+      display: block;
+    }
+    .card a::after { content: ''; position: absolute; inset: 0; }
+    .card:hover a { color: #fff; }
+  </style>
 </head>
 <body>
 
-  <div class="card-container" id="card-container">
-    <!-- Cards will be generated here -->
-  </div>
+<div class="hero">
+  <div class="hero-eyebrow">NYSSLS — Earth &amp; Space Sciences Course Map</div>
+  <h1>Interactive Tools</h1>
+  <p>Simulations and games organized by New York State Learning Standards</p>
+</div>
 
-  <!-- Include the JavaScript file -->
-  <script src="tools.js"></script>
+<nav class="nav">
+  <a href="#space-systems"      class="n1">Space Systems</a>
+  <a href="#history-of-earth"   class="n2">History of Earth</a>
+  <a href="#earths-systems"     class="n3">Earth's Systems</a>
+  <a href="#weather-climate"    class="n4">Weather &amp; Climate</a>
+  <a href="#human-sustain"      class="n5">Human Sustainability</a>
+</nav>
+
+<div id="app"></div>
+
+<script>
+const categories = [
+  {
+    id: 'space-systems', cls: 's1',
+    label: 'Space Systems',
+    pes: 'ESS1-1 · ESS1-2 · ESS1-3 · ESS1-4 · ESS1-7',
+    desc: 'Stars and stellar evolution, the Big Bang, orbital mechanics, and cyclic patterns of the Sun–Earth–Moon system.',
+    links: [
+      // ESS1-1 / ESS1-3 — Sun, stars, nuclear fusion, stellar nucleosynthesis
+      { title: "Star Quiz",                     std: "ESS1-1 / 1-3", url: "https://rlawry.github.io/star-quiz" },
+      { title: "HR-Diagram Plot",               std: "ESS1-1 / 1-3", url: "https://rlawry.github.io/hr-diagram" },
+      { title: "Star Spectra",                  std: "ESS1-1 / 1-3", url: "https://rlawry.github.io/star-spectra" },
+      { title: "Star Composition",              std: "ESS1-1 / 1-3", url: "https://rlawry.github.io/star-composition" },
+      // ESS1-2 — Big Bang, redshift, expanding universe
+      { title: "Colors of Wavelengths",         std: "ESS1-2",       url: "https://rlawry.github.io/wave-shift" },
+      { title: "Redshift of Celestial Spectra", std: "ESS1-2",       url: "https://rlawry.github.io/spectra-redshift" },
+      { title: "Spectra of Galaxies Viewer",    std: "ESS1-2",       url: "https://rlawry.github.io/galaxy-viewer" },
+      // ESS1-4 — Orbital motion, gravity, Kepler's laws
+      { title: "Ellipse Eccentricity",          std: "ESS1-4",       url: "https://rlawry.github.io/ellipsegame" },
+      { title: "Kepler Lab",                    std: "ESS1-4",       url: "https://rlawry.github.io/triangulation-simulation" },
+      { title: "Synodic Period",                std: "ESS1-4",       url: "https://rlawry.github.io/synodic-period" },
+      { title: "Retrograde",                    std: "ESS1-4",       url: "https://rlawry.github.io/retrograde" },
+      { title: "Planet Size Comparison",        std: "ESS1-4",       url: "https://rlawry.github.io/planet-compare" },
+      // ESS1-7 — Sun-Earth-Moon cycles, seasons, eclipses, tides
+      { title: "Earth Tilt",                    std: "ESS1-7",       url: "https://rlawry.github.io/earth-tilt" },
+      { title: "Sun's Path",                    std: "ESS1-7",       url: "https://rlawry.github.io/sunspath" },
+      { title: "Sunrise and Sunset",            std: "ESS1-7",       url: "https://rlawry.github.io/sunriseGame" },
+      { title: "Angle of Insolation",           std: "ESS1-7",       url: "https://rlawry.github.io/angle-of-insolation-game" },
+      { title: "Moon Phases",                   std: "ESS1-7",       url: "https://rlawry.github.io/moonphasegame" },
+      { title: "Eclipse Game",                  std: "ESS1-7",       url: "https://rlawry.github.io/eclipse-game" },
+      { title: "Parallax",                      std: "ESS1-7",       url: "https://rlawry.github.io/parallax" },
+    ]
+  },
+  {
+    id: 'history-of-earth', cls: 's2',
+    label: 'History of Earth',
+    pes: 'ESS1-5 · ESS1-6 · ESS2-1',
+    desc: 'Plate tectonics, crustal ages, Earth\'s formation, radiometric dating, and the surface processes that shape continental and ocean-floor features.',
+    links: [
+      // ESS1-5 — Plate tectonics, crustal rock ages
+      { title: "Crust Age",                          std: "ESS1-5",       url: "https://rlawry.github.io/crust-age" },
+      // ESS1-6 — Earth formation, radiometric dating, meteorites
+      { title: "3D Radioactive Decay",               std: "ESS1-6",       url: "https://rlawry.github.io/3D-radioactive-decay" },
+      { title: "2D Radioactive Decay",               std: "ESS1-6",       url: "https://rlawry.github.io/2D-radioactive-decay" },
+      { title: "Geologic Periods",                   std: "ESS1-6",       url: "https://rlawry.github.io/geologic-periods" },
+      { title: "Phanerozoic Period Ordering",        std: "ESS1-6",       url: "https://rlawry.github.io/phanerozoic" },
+      // ESS2-1 — Surface processes, landforms, contour maps
+      { title: "Isolines",                           std: "ESS2-1",       url: "https://rlawry.github.io/isolines" },
+      { title: "Streamflow Direction — Contour Maps",std: "ESS2-1",       url: "https://rlawry.github.io/streamflow" },
+      { title: "Streamflow Simulation",              std: "ESS2-1",       url: "https://rlawry.github.io/flow" },
+      { title: "Latitude and Longitude Game",        std: "ESS2-1",       url: "https://rlawry.github.io/latlongame" },
+    ]
+  },
+  {
+    id: 'earths-systems', cls: 's3',
+    label: "Earth's Systems",
+    pes: 'ESS2-2 · ESS2-3 · ESS2-5 · ESS2-6 · ESS2-7',
+    desc: 'Feedbacks between Earth\'s systems, thermal convection and Earth\'s interior, the rock and hydrologic cycles, and the coevolution of Earth and life.',
+    links: [
+      // ESS2-2 — Feedbacks between Earth systems
+      { title: "Blue Sky",                      std: "ESS2-2", url: "https://rlawry.github.io/blue-sky" },
+      // ESS2-3 — Earth's interior, thermal convection, seismic waves
+      { title: "Convection",                    std: "ESS2-3", url: "https://rlawry.github.io/convection" },
+      { title: "Seismic Waves",                 std: "ESS2-3", url: "https://rlawry.github.io/seismic-waves" },
+      { title: "Distance to Epicenter",         std: "ESS2-3", url: "https://rlawry.github.io/epicentersgame" },
+      // ESS2-5 — Rock cycle, hydrologic cycle, water and Earth materials
+      { title: "Rock Game",                     std: "ESS2-5", url: "https://rlawry.github.io/rockgame" },
+      // Multi-standard reference tools
+      { title: "Earth Science Flash Animations",std: "ESS2",   url: "https://rlawry.github.io/ruffle-loader" },
+      { title: "HS-ESS Relationships",          std: "ESS1–3", url: "https://rlawry.github.io/relationships" },
+    ]
+  },
+  {
+    id: 'weather-climate', cls: 's4',
+    label: 'Weather & Climate',
+    pes: 'ESS2-4 · ESS2-8 · ESS3-5',
+    desc: 'Air masses and weather systems, energy flow and climate change, and evidence-based climate forecasting.',
+    links: [
+      // ESS2-8 — Air masses, fronts, weather phenomena
+      { title: "Weather Instruments",               std: "ESS2-8", url: "https://rlawry.github.io/weatherinstruments" },
+      { title: "Weather Forecast — Station Models", std: "ESS2-8", url: "https://rlawry.github.io/forecast" },
+      { title: "Jet Stream",                        std: "ESS2-8", url: "https://rlawry.github.io/jet-stream" },
+      { title: "Hurricane Tracker",                 std: "ESS2-8", url: "https://rlawry.github.io/hurricanes" },
+      // ESS2-4 — Energy flow, climate change drivers
+      { title: "Angle of Insolation",               std: "ESS2-4", url: "https://rlawry.github.io/angle-of-insolation-game" },
+      { title: "Earth Tilt",                        std: "ESS2-4", url: "https://rlawry.github.io/earth-tilt" },
+    ]
+  },
+  {
+    id: 'human-sustain', cls: 's5',
+    label: 'Human Sustainability',
+    pes: 'ESS3-1 · ESS3-2 · ESS3-3 · ESS3-4 · ESS3-5 · ESS3-6',
+    desc: 'Natural resources, natural hazards, climate change impacts, and the relationship between human activity and Earth\'s systems.',
+    links: [
+      // ESS3-1 — Natural hazards, resources, climate and human activity
+      { title: "Hurricane Tracker",      std: "ESS3-1", url: "https://rlawry.github.io/hurricanes" },
+      { title: "Distance to Epicenter",  std: "ESS3-1", url: "https://rlawry.github.io/epicentersgame" },
+      { title: "Seismic Waves",          std: "ESS3-1", url: "https://rlawry.github.io/seismic-waves" },
+      // ESS3-5 — Climate change forecasting
+      { title: "Jet Stream",             std: "ESS3-5", url: "https://rlawry.github.io/jet-stream" },
+      { title: "Geologic Periods",       std: "ESS3-5", url: "https://rlawry.github.io/geologic-periods" },
+    ]
+  },
+];
+
+const app = document.getElementById('app');
+let delay = 0;
+
+categories.forEach(cat => {
+  const section = document.createElement('section');
+  section.className = `section ${cat.cls}`;
+  section.id = cat.id;
+
+  const banner = document.createElement('div');
+  banner.className = 'section-banner';
+  banner.innerHTML = `
+    <div class="banner-tab">
+      <span class="tab-label">${cat.label}</span>
+      <span class="tab-pes">${cat.pes}</span>
+    </div>
+    <div class="banner-body">
+      <span class="banner-desc">${cat.desc}</span>
+      <span class="banner-count">${cat.links.length} TOOLS</span>
+    </div>
+  `;
+
+  const grid = document.createElement('div');
+  grid.className = 'card-grid';
+
+  cat.links.forEach(link => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.animationDelay = `${delay}ms`;
+    delay += 20;
+    card.innerHTML = `
+      <span class="card-std">${link.std}</span>
+      <a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.title}</a>
+    `;
+    grid.appendChild(card);
+  });
+
+  section.appendChild(banner);
+  section.appendChild(grid);
+  app.appendChild(section);
+});
+</script>
 </body>
 </html>
