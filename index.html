@@ -11,11 +11,11 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #101418;
-      --surface: #181d24;
-      --border: rgba(255,255,255,0.07);
-      --text: #dde3ec;
-      --muted: #5a6478;
+      --bg: #13181f;
+      --surface: #1e252f;
+      --border: rgba(255,255,255,0.12);
+      --text: #eef2f8;
+      --muted: #8c9ab5;
 
       /* 1 Space Systems — deep indigo */
       --c1: #5c7cfa;
@@ -78,8 +78,9 @@
     }
     .hero p {
       margin-top: 12px;
-      color: var(--muted);
+      color: #a8b5cc;
       font-size: 0.95rem;
+      font-weight: 500;
     }
 
     /* ── NAV ── */
@@ -97,8 +98,8 @@
       letter-spacing: 0.07em;
       padding: 6px 15px;
       border-radius: 100px;
-      border: 1px solid var(--border);
-      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #a8b5cc;
       transition: all 0.18s;
       white-space: nowrap;
     }
@@ -171,14 +172,38 @@
       padding: 14px 20px;
       gap: 16px;
     }
-    .banner-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+    .banner-desc { font-size: 0.87rem; color: #b0bdd4; line-height: 1.55; font-weight: 500; }
     .banner-count {
       font-family: 'Oswald', sans-serif;
       font-size: 0.73rem;
       letter-spacing: 0.12em;
-      color: var(--muted);
+      color: #8c9ab5;
       white-space: nowrap;
       flex-shrink: 0;
+    }
+
+    /* ── BANNER RESPONSIVE ── */
+    @media (max-width: 540px) {
+      .section-banner {
+        flex-direction: column;
+      }
+      .banner-tab {
+        min-width: 0;
+        width: 100%;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .banner-tab .tab-pes {
+        margin-top: 0;
+      }
+      .banner-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px 16px;
+      }
     }
 
     /* ── GRID ── */
@@ -231,9 +256,9 @@
 
     .card a {
       text-decoration: none;
-      color: var(--text);
-      font-size: 0.88rem;
-      font-weight: 500;
+      color: #d8e0ee;
+      font-size: 0.9rem;
+      font-weight: 600;
       line-height: 1.4;
       display: block;
     }
