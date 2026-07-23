@@ -41,6 +41,11 @@
       --c5: #f87171;
       --c5-dim: rgba(248,113,113,0.10);
       --c5-glow: rgba(248,113,113,0.22);
+
+      /* 6 Review — white */
+      --c6: #f87171;
+      --c6-dim: rgba(248,248,248,0.10);
+      --c6-glow: rgba(248,248,248,0.22);
     }
 
     html { scroll-behavior: smooth; }
@@ -109,6 +114,7 @@
     .nav a.n3 { color: var(--c3); border-color: var(--c3); background: var(--c3-dim); }
     .nav a.n4 { color: var(--c4); border-color: var(--c4); background: var(--c4-dim); }
     .nav a.n5 { color: var(--c5); border-color: var(--c5); background: var(--c5-dim); }
+    .nav a.n6 { color: var(--c6); border-color: var(--c6); background: var(--c6-dim); }
 
     /* ── SECTION ── */
     .section {
@@ -162,6 +168,9 @@
     .s5 .banner-tab { background: var(--c5); }
     .s5 .banner-tab .tab-label,
     .s5 .banner-tab .tab-pes { color: #1a0404; }
+    .s6 .banner-tab { background: var(--c6); }
+    .s6 .banner-tab .tab-label,
+    .s6 .banner-tab .tab-pes { color: #1a0404; }
 
     .banner-body {
       flex: 1;
@@ -238,6 +247,7 @@
     .s3 .card:hover { border-color: var(--c3); box-shadow: 0 8px 28px var(--c3-glow); background: var(--c3-dim); }
     .s4 .card:hover { border-color: var(--c4); box-shadow: 0 8px 28px var(--c4-glow); background: var(--c4-dim); }
     .s5 .card:hover { border-color: var(--c5); box-shadow: 0 8px 28px var(--c5-glow); background: var(--c5-dim); }
+    .s6 .card:hover { border-color: var(--c6); box-shadow: 0 8px 28px var(--c6-glow); background: var(--c6-dim); }
 
     .card-std {
       font-family: 'Oswald', sans-serif;
@@ -253,6 +263,7 @@
     .s3 .card-std { color: var(--c3); background: var(--c3-dim); border: 1px solid rgba(32,199,158,0.2); }
     .s4 .card-std { color: var(--c4); background: var(--c4-dim); border: 1px solid rgba(56,189,248,0.2); }
     .s5 .card-std { color: var(--c5); background: var(--c5-dim); border: 1px solid rgba(248,113,113,0.2); }
+    .s6 .card-std { color: var(--c6); background: var(--c6-dim); border: 1px solid rgba(248,248,248,0.2); }
 
     .card a {
       text-decoration: none;
@@ -280,6 +291,7 @@
   <a href="#earths-systems"     class="n3">Earth's Systems</a>
   <a href="#weather-climate"    class="n4">Weather &amp; Climate</a>
   <a href="#human-sustain"      class="n5">Human Sustainability</a>
+  <a href="#review"             class="n6">Review</a>
 </nav>
 
 <div id="app"></div>
@@ -386,6 +398,21 @@ const categories = [
       // ESS3-5 — Climate change forecasting
       { title: "Jet Stream",             std: "ESS3-5", url: "https://rlawry.github.io/jet-stream" },
       { title: "Geologic Periods",       std: "ESS3-5", url: "https://rlawry.github.io/geologic-periods" },
+    ]
+  },
+  {
+    id: 'review', cls: 's6',
+    label: 'Review',
+    pes: 'Many',
+    desc: 'Cumulative review activities spanning multiple ESS standards.',
+    links: [
+      { title: "Review",              std: "Many", url: "https://rlawry.github.io/review" },
+      { title: "Star Review",         std: "Many", url: "https://rlawry.github.io/star-review" },
+      { title: "Geoscience Processes",std: "Many", url: "https://rlawry.github.io/geoscience-processes" },
+      { title: "Vocab Review",        std: "Many", url: "https://rlawry.github.io/vocab" },
+      { title: "Big Bang Review",     std: "Many", url: "https://rlawry.github.io/big-bang" },
+      { title: "Earth Systems Review",std: "Many", url: "https://rlawry.github.io/earth-systems" },
+      { title: "Cycles Review",       std: "Many", url: "https://rlawry.github.io/cycles" },
     ]
   },
 ];
